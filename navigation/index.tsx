@@ -2,12 +2,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import { BackButton } from '../components/BackButton';
-import Details from '../screens/details';
-import Overview from '../screens/overview';
+import Signin from '../screens/signin';
+import Register from '../screens/register';
 
 export type RootStackParamList = {
-  Overview: undefined;
-  Details: { name: string };
+  signin: undefined;
+  register: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -15,15 +15,13 @@ const Stack = createStackNavigator<RootStackParamList>();
 export default function RootStack() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Overview">
-        <Stack.Screen name="Overview" component={Overview} />
-        <Stack.Screen
-          name="Details"
-          component={Details}
-          options={({ navigation }) => ({
-            headerLeft: () => <BackButton onPress={navigation.goBack} />,
-          })}
-        />
+      <Stack.Navigator initialRouteName="signin"
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <Stack.Screen name="signin" component={Signin}/>
+        <Stack.Screen name="register" component={Register} />
       </Stack.Navigator>
     </NavigationContainer>
   );
