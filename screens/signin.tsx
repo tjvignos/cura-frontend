@@ -4,8 +4,9 @@ import { StyleSheet, Image } from 'react-native';
 import { RootStackParamList } from '../navigation';
 import { Input, YStack } from 'tamagui';
 import { Button, ButtonText } from 'tamagui';
-import { CInput } from 'components/CInput';
-import { CButton } from 'components/CButton';
+import { CInput } from 'custom-components/CInput';
+import { CButton } from 'custom-components/CButton';
+import { styles } from 'styles';
 
 type SigninScreenNavigationProps = StackNavigationProp<RootStackParamList, 'signin'>;
 
@@ -13,14 +14,11 @@ export default function Signin() {
   const navigation = useNavigation<SigninScreenNavigationProps>();
 
   return (
-    <YStack
-      style={styles.center}
-      space={20}
-    >
+    <YStack style={styles.stack} space={20}>
       <Image source={require('../assets/full-logo.png')} style={{width:200, height:64}} />
-      <CInput label="username" />
-      <CInput label="password" />
-      <CButton label="sign in" />
+      <CInput label="username" width={200} height={45} multi={false}/>
+      <CInput label="password" width={200} height={45} multi={false}/>
+      <CButton label="sign in" nav={() => navigation.navigate('checkin')} width={200} height={45}/>
       <Button
         size="$1"
         chromeless
@@ -31,16 +29,3 @@ export default function Signin() {
     </YStack>
   );
 }
-
-export const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 24,
-  },
-  center: {
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
-});
