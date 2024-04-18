@@ -1,7 +1,7 @@
 # cura frontend
 
 ## introduction
-welcome to cura frontend! the cura app has a react native frontend (this repository) and a django rest backend ([cura-backend]([url](https://github.com/tjvignos/cura-backend))).
+welcome to cura frontend! the cura app has a react native frontend (this repository) and a django rest backend ([cura-backend](https://github.com/tjvignos/cura-backend))).
 
 ## getting started
 to get started with this project, follow these steps:
