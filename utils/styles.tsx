@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     marginTop: 40,
     padding: 20,
     flexDirection: "column",
-    justifyContent: "space-between",
+    
     alignItems: "flex-start",
   },
   heading: {
@@ -28,9 +28,9 @@ export const styles = StyleSheet.create({
     backgroundColor: "#C0A1DD",
   },
   body: {
-    flex: 0.88,
+    flex: 0.53,
     flexDirection: "column",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
   },
   bodyText: {
     fontSize: 20,
@@ -49,6 +49,22 @@ export const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
+    justifyContent: 'center',
+  },
+  input: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    height: 45,
+  },
+  circleCard: {
+    width: 150,
+    height: 150,
+    padding: 10,
+  },
+  circles: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'flex-start',
     justifyContent: 'center',
   },
 });

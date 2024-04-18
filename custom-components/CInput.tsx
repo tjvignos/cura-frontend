@@ -1,6 +1,6 @@
 import { Input, TextArea } from "tamagui";
 
-export function CInput({ label, width, height, multi }: { label: string, width: number, height: number, multi: boolean }) {
+export function CInput({ label, width, height, multi, onChangeText }: { label: string, width: number, height: number, multi: boolean, onChangeText: any}) {
   return (
     <>{multi ? 
       <TextArea 
@@ -12,6 +12,7 @@ export function CInput({ label, width, height, multi }: { label: string, width: 
         width={width}
         height={height}
         color="#C0A1DD"
+        onChangeText={onChangeText}
       /> : 
       <Input 
         placeholder={label}
@@ -22,6 +23,8 @@ export function CInput({ label, width, height, multi }: { label: string, width: 
         width={width}
         height={height}
         color="#C0A1DD"
+        onChangeText={onChangeText}
+        secureTextEntry={label === 'password'}
       />
     }</>
     

@@ -1,6 +1,13 @@
-import { View } from "tamagui";
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../navigation';
+import { View } from 'react-native';
 
-export default function Settings({ changeState } : { changeState: any}) {
+type SettingsScreenNavigationProps = StackNavigationProp<RootStackParamList, 'settings'>;
+
+export default function Settings() {
+  const navigation = useNavigation<SettingsScreenNavigationProps>();
+
   return (
     <View style={{
       height: "80%",
